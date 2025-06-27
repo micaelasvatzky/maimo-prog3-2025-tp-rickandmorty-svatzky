@@ -1,8 +1,8 @@
 import { CharacterContainer } from "@/components/CharacterContainer"
 
-const page = ({params}) => {
+const page = async ({params}) => {
 
-    const {id} = params;
+    const {id} = await params;
 
   return (
     <div>
