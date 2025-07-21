@@ -1,44 +1,33 @@
-'use client'
+"use client";
 
-import {useState, useEffect, useCallback} from 'react'
-import CharacterGrid from '@/components/CharacterGrid'
-import axios from 'axios'
+import HeroSection from "@/components/HeroSection";
+import HomeButton from "./HomeButton";
+import Image from "next/image";
+
+
 
 const HomeContainer = () => {
-
-    //fetch de la data
-    const API_URL = 'https://rickandmortyapi.com/api/';
-
-    const [characters, setCharacters] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    
-
-    const getCharacters = useCallback(async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(`${API_URL}/character`)
-        setCharacters(response.data.results);
-        setLoading(false)
-
-      } catch (error) {
-        setError(true);
-      }
-
-    }, [])
-
-    useEffect(() => {
-      getCharacters();
-    }, [getCharacters])
-    
-
+  
   return (
     <div>
-      <h1 className='text-5xl flex justify-center py-5 mb-4'>Rick and Morty Maimo App</h1>
-        {!loading && <CharacterGrid characters = {characters} />}
-        {loading && <div className='flex justify-center items-center min-h-[300px]'>Loading</div>}
+      <HeroSection />
+      <section id="main-section" className="flex flex-col justify-center items-center">
+         <h2 className="text-white text-2xl font-bold mt-10">Welcome to... eh... whatever this is.</h2>
+        <div className="flex gap-4 mx-3 mb-10 mt-5">
+      <HomeButton name = "Characters" />
+      <HomeButton name = "Locations" />
+      <HomeButton name = "Episodes"/>
+      </div>
+      </section>
+      <div className="flex justify-center items-center">
+         <div className="w-[400px] mr-44">
+        <h4 className="text-xl font-bold text-white text-left">Here’s every place you can watch the show... or don’t. We literally don’t care.</h4>
+        </div>
+        <Image src="/assets/adultswim.jpeg" width={325} height={325} alt="adult swim" className="w-[200px]"/>
+      </div>
+      <div  className="text-white">Agregar logos</div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeContainer
+export default HomeContainer;

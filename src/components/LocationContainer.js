@@ -2,21 +2,21 @@
 
 import axios from "axios"
 import {useState, useEffect, useCallback} from 'react'
-import CharacterCardSingle from "@/components/CharacterCardSingle";
+import LocationCardSingle from "@/components/LocationCardSingle"
 
-export const CharacterContainer = ({id}) => {
-    const [character, setCharacter] = useState({});
+export const LocationContainer = ({id}) => {
+    const [location, setLocation] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(true);
 
 
-      const getCharacter = useCallback(async () => {
+      const getLocation = useCallback(async () => {
         const API_URL = 'https://rickandmortyapi.com/api/';
 
         try {
             setLoading(true);
-            const response = await axios.get(`${API_URL}character/${id}`);
-                setCharacter(response.data);
+            const response = await axios.get(`${API_URL}location/${id}`);
+                setLocation(response.data);
                 setLoading(false);
             
         } catch (error) {
@@ -27,10 +27,10 @@ export const CharacterContainer = ({id}) => {
 
     useEffect(()=>
         {
-            getCharacter();
-        }, [getCharacter]);
+            getLocation();
+        }, [getLocation]);
 
   return (
-    <div>{!loading && <CharacterCardSingle character={character} />} </div>
+    <div>{!loading && <LocationCardSingle location={location} />} </div>
   )
 }
