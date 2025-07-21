@@ -12,8 +12,8 @@ const HomeContainer = () => {
     <div>
       <HeroSection />
       <section id="main-section" className="flex flex-col justify-center items-center">
-         <h2 className="text-white text-2xl font-bold mt-10">Welcome to... eh... whatever this is.</h2>
-        <div className="flex gap-4 mx-3 mb-10 mt-5">
+         <h2 className="text-white text-3xl font-bold mt-10">Welcome to... uh... whatever this is.</h2>
+        <div className="flex gap-4 mx-3 mb-10 mt-5 max-w-[1200px]">
       <HomeButton name = "Characters" />
       <HomeButton name = "Locations" />
       <HomeButton name = "Episodes"/>
