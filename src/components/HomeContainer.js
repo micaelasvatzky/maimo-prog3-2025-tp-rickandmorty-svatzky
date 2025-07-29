@@ -45,7 +45,7 @@ const HomeContainer = () => {
           className=" ml-4 w-[150px] h-[100px]"
         />
         <Image
-          src="/assets/hulu.png"
+          src="/assets/Hulu.png"
           width={325}
           height={325}
           alt="Hulu"
