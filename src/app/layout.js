@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-black`}
+        className={`${inter.className}`}
       >
         <Navbar />
         {children}

@@ -33,7 +33,7 @@ const HeroSection = () => {
           </h3>
           <button
             onClick={handleScroll}
-            className="px-6 py-3 bg-lime-300 text-black font-semibold rounded-full text-lg hover:bg-blue-300 transition"
+            className="px-6 py-3 bg-lime-300 text-black font-semibold rounded-full text-lg hover:bg-blue-300 hover:cursor-pointer transition"
           >
             Scroll. I dare you.
           </button>

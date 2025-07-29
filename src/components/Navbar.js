@@ -9,13 +9,13 @@ const Navbar = () => {
         <nav className="flex flex-row mt-4 md:mt-0">
           <ul className="flex flex-row justify-around items-center gap-2 md:gap-8 text-white text-sm font-semibold ">
             <li>
-              <Link href="/characters">Characters</Link>
+              <Link className="hover:cursor-pointer hover:text-lime-300" href="/characters">Characters</Link>
             </li>
              <li>
-              <Link href="/locations">Locations</Link>
+              <Link className="hover:cursor-pointer hover:text-lime-300"  href="/locations">Locations</Link>
             </li>
              <li>
-              <Link href="/episodes">Episodes</Link>
+              <Link className="hover:cursor-pointer hover:text-lime-300"  href="/episodes">Episodes</Link>
             </li>
           </ul>
         </nav>
