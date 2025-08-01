@@ -33,7 +33,6 @@ const Characters = () => {
 
   return (
     <div>
-      <h1 className='text-5xl flex justify-center py-5 mb-4'>Rick and Morty Maimo App</h1>
         {!loading && <CharacterGrid characters = {characters} />}
         {loading && <div className='flex justify-center items-center min-h-[300px]'>Loading</div>}
     </div>

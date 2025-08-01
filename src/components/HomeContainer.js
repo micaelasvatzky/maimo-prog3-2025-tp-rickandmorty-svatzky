@@ -3,10 +3,11 @@
 import HeroSection from "@/components/HeroSection";
 import HomeButton from "./HomeButton";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeContainer = () => {
   return (
-    <div className=" bg-gray-900 bg-gradient-to-b from-black to-transparent">
+    <div className="bg-gray-900 bg-gradient-to-b from-black to-transparent">
       <HeroSection />
       <section
         id="main-section"
@@ -28,6 +29,7 @@ const HomeContainer = () => {
             don’t care.
           </h4>
         </div>
+        <Link href="https://www.adultswim.com/rick-and-morty" target="blank">
         <Image
           src="/assets/adultswim.jpeg"
           width={325}
@@ -35,8 +37,10 @@ const HomeContainer = () => {
           alt="adult swim"
           className="w-[200px]"
         /> 
+        </Link>
       </div>
       <div className="flex justify-around p-10 bg-black">
+        <Link href="https://www.hbomax.com/ar/es/shows/rick-and-morty/ab553cdc-e15d-4597-b65f-bec9201fd2dd" target="blank">
          <Image
           src="/assets/hbomax.png"
           width={150}
@@ -44,6 +48,8 @@ const HomeContainer = () => {
           alt="Hbo Max"
           className=" ml-4 w-[150px] h-[100px]"
         />
+        </Link>
+        <Link href="https://www.hulu.com/series/rick-and-morty-4e0f6374-fc81-4da2-b7a9-f7f8c29e7acc" target="blank">
         <Image
           src="/assets/Hulu.png"
           width={325}
@@ -51,6 +57,8 @@ const HomeContainer = () => {
           alt="Hulu"
           className="w-[175px]"
         />
+        </Link>
+        <Link href="https://www.netflix.com/ar/title/80014749" target="blank">
         <Image
           src="/assets/netflix.png"
           width={325}
@@ -58,6 +66,7 @@ const HomeContainer = () => {
           alt="Netflix"
           className="w-[200px]"
         />
+        </Link>
       </div>
     </div>
   );
