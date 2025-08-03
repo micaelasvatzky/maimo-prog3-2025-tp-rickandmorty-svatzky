@@ -1,16 +1,13 @@
+import { LocationContainer } from "@/components/LocationContainer";
 
-
-import { LocationContainer }from "@/components/LocationContainer";
-
-const LocationPage = async ({params}) => {
-
-    const {id} = await params;
+const LocationPage = async ({ params }) => {
+  const { id } = await params;
 
   return (
     <div>
-        <LocationContainer id={id} />
+      <LocationContainer id={id} />
     </div>
-  )
-}
+  );
+};
 
-export default LocationPage
+export default LocationPage;

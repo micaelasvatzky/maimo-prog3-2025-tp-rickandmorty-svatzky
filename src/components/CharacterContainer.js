@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Loading from "@/components/Loading";
 
 export const CharacterContainer = ({ id }) => {
   const [character, setCharacter] = useState({});
@@ -38,7 +39,11 @@ export const CharacterContainer = ({ id }) => {
           }}
         >
           <div className="w-full flex justify-center">
-            <div className="relative flex flex-col md:flex-row w-190 max-w-5xl mb-10 justify-center items-center md:items-start md:justify-start p-6 bg-white/40 mt-35 rounded-xl shadow-lg backdrop-blur text-black">
+            <div
+              className="relative flex flex-col md:flex-row w-[800px] max-w-5xl mb-10 justify-center items-center md:items-start md:justify-start p-6 mt-36
+  bg-lime-200/30 backdrop-blur-md border border-lime-300/60 shadow-[0_0_40px_rgba(163,230,53,0.3)]
+  clip-path-[polygon(0%_10%,10%_0%,90%_0%,100%_10%,100%_90%,90%_100%,10%_100%,0%_90%)] rounded-[2rem]"
+            >
               <Image
                 src={character.image}
                 alt={character.name}
@@ -49,8 +54,8 @@ export const CharacterContainer = ({ id }) => {
               <div className="md:ml-5 w-70 md:w-150 mt-5 md:mt-0 md:max-w-xl h-full flex flex-col justify-between">
                 <h2 className="text-4xl font-bold mb-5">{character.name}</h2>
 
-                <div className="flex flex-col gap-6 flex-grow  text-lg">
-                  <div className="flex items-center text-xl font-semibold">
+                <div className="flex flex-col gap-6 flex-grow text-lg">
+                  <div className="flex items-center text-xl font-semibold mb-2">
                     <span className="mr-3">Status:</span>
                     <span
                       className={`inline-block w-4 h-4 rounded-full ${
@@ -63,15 +68,15 @@ export const CharacterContainer = ({ id }) => {
                     ></span>
                   </div>
 
-                  <p className="text-lg font-semibold text-gray-800">
+                  <p className="text-lg font-semibold ">
                     Origin: {character.origin.name}
                   </p>
 
-                  <p className="text-lg font-semibold text-gray-800">
+                  <p className="text-lg font-semibold ">
                     Species: {character.species}
                   </p>
 
-                  <p className="text-lg font-semibold text-gray-800">
+                  <p className="text-lg font-semibold">
                     Location: {character.location.name}
                   </p>
                 </div>
@@ -80,6 +85,9 @@ export const CharacterContainer = ({ id }) => {
           </div>
         </div>
       )}
+
+      {loading && <Loading />}
+      {error && <p>HUBO UN ERROR</p>}
     </div>
   );
 };

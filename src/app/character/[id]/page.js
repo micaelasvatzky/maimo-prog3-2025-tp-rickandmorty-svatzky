@@ -1,5 +1,6 @@
 import { CharacterContainer } from "@/components/CharacterContainer"
 
+
 const page = async ({params}) => {
 
     const {id} = await params;
