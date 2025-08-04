@@ -16,12 +16,11 @@ const Loading = () => {
     >
       <div className="flex justify-center items-center mt-5">
         <Image
-          className="w-120 h-120"
+          className="w-130 h-130"
           src="/assets/portal-rick-and-morty.gif"
           alt="Loading Portal"
           height={50}
           width={50}
-          unoptimized
         />
       </div>
     </div>

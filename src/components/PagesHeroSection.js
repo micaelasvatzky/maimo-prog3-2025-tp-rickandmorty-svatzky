@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PagesHeroSection = ({ title }) => {
   return (
-    <div className="relative w-full h-[300px] overflow-hidden mb-7 flex items-center justify-center">
+    <div className="relative w-full h-[300px] overflow-hidden flex items-center justify-center">
       <Image
         src="/assets/cabezas.jpg"
         alt="Rick y Morty"

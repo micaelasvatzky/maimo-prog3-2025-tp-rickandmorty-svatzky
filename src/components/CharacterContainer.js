@@ -8,7 +8,7 @@ import Loading from "@/components/Loading";
 export const CharacterContainer = ({ id }) => {
   const [character, setCharacter] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
 
   const getCharacter = useCallback(async () => {
     const API_URL = "https://rickandmortyapi.com/api/";
@@ -29,7 +29,7 @@ export const CharacterContainer = ({ id }) => {
 
   return (
     <div>
-      {!loading && (
+      {!loading && !error && (
         <div
           className="min-h-screen lg:h-140 md:h-120 bg-cover bg-center text-white"
           style={{
@@ -87,7 +87,7 @@ export const CharacterContainer = ({ id }) => {
       )}
 
       {loading && <Loading />}
-      {error && <p>HUBO UN ERROR</p>}
+      {error && !loading && <p>HUBO UN ERROR</p>}
     </div>
   );
 };
