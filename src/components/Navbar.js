@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [pathname]);
 
   useEffect(() => {
-    if (search.trim().length > 1) {
+    if (search.trim().length >= 1) {
       const delay = setTimeout(() => {
         router.push(`/search?q=${encodeURIComponent(search.trim())}`);
       }, 500);
