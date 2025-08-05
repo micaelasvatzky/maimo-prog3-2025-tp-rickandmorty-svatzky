@@ -3,7 +3,7 @@ import Image from "next/image";
 const Loading = () => {
   return (
     <div
-      className="min-h-screen text-white relative overflow-hidden py-8"
+      className="min-h-screen text-white relative overflow-hidden flex items-center justify-center"
       style={{
         background: `
       radial-gradient(circle at 20% 30%, rgba(255, 0, 255, 0.2) 0%, transparent 30%),
@@ -14,13 +14,13 @@ const Loading = () => {
         backdropFilter: "blur(8px)",
       }}
     >
-      <div className="flex justify-center items-center mt-5">
+      <div className="w-[500px] md:w-[350px] lg:w-[500px] aspect-square">
         <Image
-          className="w-130 h-130"
+          className="w-full h-full object-contain"
           src="/assets/portal-rick-and-morty.gif"
           alt="Loading Portal"
-          height={50}
-          width={50}
+          width={350}
+          height={350}
         />
       </div>
     </div>

@@ -25,10 +25,11 @@ const Navbar = () => {
   }, [search, router]);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-black/50 shadow-md px-6 pt-3 lg:pt-2 lg:pb-1 md:pr-6 pb-2">
-      <div className="flex flex-row  md:flex-row md:justify-between md:items-center ">
-        <nav className="flex flex-row mt-4 md:mt-0">
-          <ul className="flex flex-row justify-around items-center gap-2 md:gap-8 text-white text-sm font-semibold ">
+    <div className="fixed top-0 left-0 w-full z-50 bg-black/50 shadow-md px-4 pt-3 pb-2 md:px-6 md:pt-2 md:pb-1">
+      <div className="flex flex-col-reverse items-center gap-3 md:flex-row md:justify-between md:items-center md:gap-0">
+        
+        <nav className="flex flex-row w-full md:w-auto">
+          <ul className="flex flex-row justify-around w-full items-center gap-2 text-white text-xs font-medium md:gap-8 md:text-sm md:font-semibold">
             <li>
               <Link
                 className="hover:cursor-pointer hover:text-lime-300"
@@ -56,26 +57,31 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <Link href="/">
-          <Image
-            src="/assets/portalgun.png"
-            width={45}
-            height={100}
-            alt="Rick and Morty Logo"
-            className="w-[50px]"
-          />
-        </Link>
+       
+        <div className="flex justify-center w-full md:w-auto">
+          <Link href="/" className="mx-auto md:mx-0">
+            <Image
+              src="/assets/portalgun.png"
+              width={45}
+              height={100}
+              alt="Rick and Morty Logo"
+              className="w-[40px] md:w-[50px]"
+            />
+          </Link>
+        </div>
 
-        <div className="flex items-center gap-2">
+        
+        <div className="w-full md:w-auto flex justify-center md:justify-end items-center gap-2">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search..."
-            className="text-black rounded-lg px-1.5 flex justify-between items-center 
-  bg-lime-200/50 backdrop-blur-md border border-lime-300/60 
-  shadow-[0_0_40px_rgba(163,230,53,0.3)] 
-  clip-path-[polygon(0%_10%,10%_0%,90%_0%,100%_10%,100%_90%,90%_100%,10%_100%,0%_90%)]"
+            className="w-full max-w-[180px] text-xs md:text-sm text-black rounded-lg px-2 py-1 
+          bg-lime-200/50 backdrop-blur-md border border-lime-300/60 
+          shadow-[0_0_20px_rgba(163,230,53,0.3)] 
+          clip-path-[polygon(0%_10%,10%_0%,90%_0%,100%_10%,100%_90%,90%_100%,10%_100%,0%_90%)] 
+          md:max-w-[220px] md:shadow-[0_0_40px_rgba(163,230,53,0.3)]"
           />
         </div>
       </div>

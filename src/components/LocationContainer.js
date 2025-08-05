@@ -47,25 +47,29 @@ export const LocationContainer = ({ id }) => {
     <div>
       {!loading && !error && (
         <div
-          className="min-h-screen lg:h-140 md:h-120 bg-cover bg-center text-white"
+          className="min-h-screen bg-cover bg-center text-white"
           style={{
             backgroundImage: `url(/assets/fondoAliens.jpg)`,
             backgroundColor: "rgba(0,0,0,0.7)",
             backgroundBlendMode: "overlay",
           }}
         >
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center px-4">
             <article
-              className="relative flex flex-col w-xl mb-10 justify-center items-center p-6 mt-36
-  bg-lime-200/30 backdrop-blur-md border border-lime-300/60 shadow-[0_0_40px_rgba(163,230,53,0.3)]
-  clip-path-[polygon(0%_10%,10%_0%,90%_0%,100%_10%,100%_90%,90%_100%,10%_100%,0%_90%)] rounded-[2rem]"
+              className="
+            relative flex flex-col w-full max-w-[90%] sm:max-w-xl md:max-w-2xl
+            mb-10 md:mb-20 justify-center items-center p-8 md:p-3 lg:p-6 mt-72 md:mt-18 lg:mt-36
+            bg-lime-200/30 backdrop-blur-md border border-lime-300/60 
+            shadow-[0_0_40px_rgba(163,230,53,0.3)]
+            clip-path-[polygon(0%_10%,10%_0%,90%_0%,100%_10%,100%_90%,90%_100%,10%_100%,0%_90%)] 
+            rounded-[2rem]"
             >
               <h2 className="text-4xl font-bold mb-2">{location.name}</h2>
-              <p className=" text-xl italic mb-10">
+              <p className="text-xl italic mb-10">
                 {location.type} - {location.dimension}
               </p>
 
-              <div className="flex flex-col justify-center items-center w-[400px]">
+              <div className="flex flex-col justify-center items-center w-full max-w-md">
                 <p className="italic text-lg">Residents:</p>
 
                 <div className="grid grid-cols-5 gap-3 mt-4">
