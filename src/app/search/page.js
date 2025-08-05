@@ -1,3 +1,5 @@
+"use client"
+
 import SearchComp from "@/components/SearchComp";
 
 
